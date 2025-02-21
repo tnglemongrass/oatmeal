@@ -1,0 +1,17 @@
+{
+    "name": "fake-codepilot-server",
+    "version": "1.0.0",
+    "description": "This is a server that emulated the behavior of the real one from TNG, but responds with fake responses.",
+    "main": "index.js",
+    "scripts": {
+      "start": "node index.js",
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "express": "^4.21.2",
+      "swagger-jsdoc": "^6.2.8",
+      "swagger-ui-express": "^5.0.1"
+    }
+  }

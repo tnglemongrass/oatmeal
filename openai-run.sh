@@ -1,0 +1,25 @@
+#!/bin/bash
+
+export RUST_BACKTRACE=1
+
+# ./target/release/oatmeal \
+# --backend openai \
+# --open-ai-url http://localhost:3001 \
+# --open-ai-token "$LLM_SERVER_TOKEN" \
+# --editor none --model "meta-llama/Llama-3.3-70B-Instruct"
+
+LLM_SERVER_TOKEN="eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJqbnIyZFQ1OTZXM2dUMzdFNF9CVUJsZnB2WlFSRFZFZTl3dXhqUVU0S0k0In0.eyJleHAiOjE3NDE4Nzg0ODUsImlhdCI6MTczNDEwMjQ4NSwianRpIjoiZmYyZWE1MWItMTEzYS00M2FlLTllODYtNzkxYTYxYmM5NThhIiwiaXNzIjoiaHR0cHM6Ly9zc28udG5ndGVjaC5jb20vYXV0aC9yZWFsbXMvVE5HLUFJIiwiYXVkIjpbInRuZy1haS1wdWJsaWMtYWNjZXNzIiwiazhzLW9wZXJhdG9yLXByb2QiLCJhY2NvdW50Il0sInN1YiI6ImIyMTc5ZmQwLTEzMzItNDlhMy1iNGUzLWVlOTFjYzlmY2M0NiIsInR5cCI6IkJlYXJlciIsImF6cCI6InRuZy1haS1wdWJsaWMtYWNjZXNzIiwic2lkIjoiN2ZkOTM4YTEtMzVlZC00YmJlLThlOWQtZGIwOGM0YzczZTQ4IiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLXRuZy1haSIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJrOHMtb3BlcmF0b3ItcHJvZCI6eyJyb2xlcyI6WyJIMTAwX1NLQUlORVRfQUNDRVNTIl19LCJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIGVtYWlsIiwibmFtZSI6Ikx1a2FzIEJhcm9uIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiYmFyb25sIiwiZ2l2ZW5fbmFtZSI6Ikx1a2FzIiwiZmFtaWx5X25hbWUiOiJCYXJvbiIsImVtYWlsIjoibHVrYXMuYmFyb25AdG5ndGVjaC5jb20ifQ.JNePazkoq_RAIKu98zzr9sEg6Q5r9L5y-IdzvxtHn7-THI_CBnqSwJLqgZvWAmLQF0nqIQuM0kLcJePCkZVH8KeXIF99VX4aSFajRgjuBcF4d9hIfErWK2dCF8YGaGOkn_9G05DVGhr8Xctz2NWD0ZukKVpqe5Kb6fDWlKLWjMThK3ckPjHxkqmJirKKp0EGGqJidxHoX6jH1MAR3bzStzJyIz9PW2OpuELO_C0GL9bl4qDdO0Xjtz2x5NLyPSpYumZ_Zau_tWPo0O7WxD0efK97w7mrH4aL2yCdmhNlzxOJaTiQNopzBNZDUkMHXywNu-Fs0odLpSdQG9cK9GLa2w"
+
+# ./target/debug/oatmeal \
+# --backend openai \
+# --open-ai-url https://chat.model.tngtech.com \
+# --open-ai-token "$LLM_SERVER_TOKEN" \
+# --editor none --model "meta-llama/Llama-3.3-70B-Instruct"
+
+
+
+./target/debug/oatmeal \
+--backend openai \
+--open-ai-url https://taia.tngtech.com/proxy/openai/v1 \
+--open-ai-token "$LLM_SERVER_TOKEN" \
+--editor none --model "meta-llama/Llama-3.3-70B-Instruct"

@@ -98,6 +98,8 @@ impl Backend for OpenAI {
             bail!("OpenAI token is not defined");
         }
 
+        return Ok(());
+
         // OpenAI are trolls with their API where the index either returns a 404 or a
         // 418. If using the official API, don't bother health checking it.
         if self.url == "https://api.openai.com" {
@@ -168,8 +170,10 @@ impl Backend for OpenAI {
             stream: true,
         };
 
-        let res = reqwest::Client::new()
-            .post(format!("{url}/v1/chat/completions", url = self.url))
+        let res = reqwest::Client::builder()
+            .no_proxy()
+            .build()?
+            .post(format!("{}/v1/chat/completions", self.url.trim_end_matches('/')))
             .header("Authorization", format!("Bearer {}", self.token))
             .json(&req)
             .send()
@@ -180,7 +184,7 @@ impl Backend for OpenAI {
                 status = res.status().as_u16(),
                 "Failed to make completion request to OpenAI"
             );
-            bail!("Failed to make completion request to OpenAI");
+            bail!("Failed to make completion request to OpenAI {} {:?}", res.status(), res.headers());
         }
 
         let stream = res.bytes_stream().map_err(convert_err);
