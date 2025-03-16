@@ -4,17 +4,17 @@
 
 # export RUST_BACKTRACE=1
 
-# ./target/release/oatmeal \
-# --backend openai \
-# --open-ai-url http://localhost:3001 \
-# --open-ai-token "$LLM_SERVER_TOKEN" \
-# --editor none --model "meta-llama/Llama-3.3-70B-Instruct"
-
 ./target/release/oatmeal \
 --backend openai \
---open-ai-url https://chat.model.tngtech.com \
+--open-ai-url http://localhost:3001 \
 --open-ai-token "$LLM_SERVER_TOKEN" \
 --editor none --model "meta-llama/Llama-3.3-70B-Instruct"
+
+# ./target/release/oatmeal \
+# --backend openai \
+# --open-ai-url https://chat.model.tngtech.com \
+# --open-ai-token "$LLM_SERVER_TOKEN" \
+# --editor none --model "meta-llama/Llama-3.3-70B-Instruct"
 
 # ./target/release/oatmeal \
 # --backend openai \

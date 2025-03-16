@@ -160,8 +160,6 @@ app.post('/v1/chat/completions', (req, res) => {
     headers: {
       'Authorization': req.header('Authorization'),
       'Content-Type': 'application/json',
-      'Accept': req.header('Accept') || '*/*',
-      'Accept-Encoding': req.header('Accept-Encoding') || 'gzip'
     },
     data: JSON.stringify(req.body), // Use 'data' instead of 'body'
     responseType: 'stream' // Correct response type handling
